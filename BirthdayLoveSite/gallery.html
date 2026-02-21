@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gallery</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .question-frame {
+            width: 200px;
+            height: 200px;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 60px;
+            font-weight: bold;
+            border: 10px solid white;
+            box-shadow: 0 8px 15px rgba(0,0,0,0.3);
+            margin: 20px;
+        }
+
+        .img-box {
+    position: relative;
+    display: inline-block;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bold;
+    color: black;
+}
+
+
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.popup-content {
+    background: white;
+    padding: 30px 40px;
+    border-radius: 15px;
+    text-align: center;
+    height: 300px;
+    width: 300px;
+    animation: popupFade 0.5s ease;
+}
+
+.popup-content h2 {
+    margin-bottom: 10px;
+}
+
+.popup-content button {
+    margin-top: 15px;
+    padding: 8px 20px;
+    border: none;
+    background: #ff4d6d;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.popup-content button:hover {
+    background: #e63950;
+}
+
+@keyframes popupFade {
+    from {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+        .message-box button {
+    margin-top: 15px;
+    background: #ff4d88;
+    color: white;
+    border-radius: 20px;
+    padding: 8px 18px;
+}
+    </style>
+
+</head>
+<body class="gallery-bg">
+
+
+    <!-- Custom Popup -->
+<div id="customPopup" class="popup">
+    <div class="popup-content">
+        <h2>PENDING! 😅📸</h2>
+        <p>Will Click Them Soon!</p>
+        <button onclick="closePopup()">Okay 💕</button>
+    </div>
+</div>
+
+<h1 class="gallery-title">Our Cute Moments 📸</h1>
+
+<div class="polaroid-gallery">
+
+    <div class="img-box rotate1">
+        <img src="images/bg_1.jpg" class="polaroid">
+        <div class="overlay">?</div>
+    </div>
+
+    <div class="img-box rotate2">
+        <img src="images/image_1.jpg" class="polaroid">
+        <div class="overlay">?</div>
+    </div>
+
+    <div class="img-box rotate3">
+        <img src="images/image_2.jpg" class="polaroid">
+        <div class="overlay">?</div>
+    </div>
+
+    <div class="img-box rotate4">
+        <img src="images/image_3.jpg" class="polaroid">
+        <div class="overlay">?</div>
+    </div>
+
+    <div class="img-box rotate1">
+        <img src="images/person_4.jpg" class="polaroid">
+        <div class="overlay">?</div>
+    </div>
+
+</div>
+
+   
+<div id="messageBox" class="message-box">
+    <p id="messageText"></p>
+    <a href="gift.html"><button>Return</button></a>
+</div>
+
+
+    <script>
+function closePopup() {
+    document.getElementById("customPopup").style.display = "none";
+}
+</script>
+
+
+</body>
+</html>

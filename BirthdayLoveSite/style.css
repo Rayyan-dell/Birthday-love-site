@@ -1,0 +1,269 @@
+body {
+    margin: 0;
+    font-family: cursive ;
+    text-align: center;
+}
+
+/* First Page */
+.main-bg {
+    background-color: #77547a;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+
+.cat {
+    margin-top: 100px;
+    width: 200px;
+}
+
+h1 {
+    font-size: 50px;
+    color: rgb(224, 143, 170);
+}
+
+.question {
+    font-size: 25px;
+    color: rgb(0, 0, 0);
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px;
+    border:  color  rgb(224, 143, 170);
+    border-radius: 25px;
+    background: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* No Page */
+.no-bg {
+    background: url('images/No.jpeg') no-repeat center/cover;
+    height: 36vh;
+    margin-top: 530px;
+}
+
+.say-yes {
+    position: absolute;
+    right: 6%;
+    top: 13%;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+}
+
+/* Gift Page */
+.gift-bg {
+    background-color: #9ac2b2;
+    padding: 50px;
+}
+
+.gift-container {
+    text-align: center;
+    margin-top: 125px;
+}
+
+.gift-container h1{
+    color: black;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 160px);
+    grid-template-rows: repeat(2, 160px);
+    gap: 20px;
+    justify-content: center;   /* horizontal center */
+    align-content: center;     /* vertical compact */
+    margin-top: 30px;
+}
+
+.card {
+    width: 160px;
+    height: 160px;
+    background: white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card img {
+    width: 70px;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+/* Gallery */
+.gallery-bg {
+    background-color: #AA4344;
+}
+
+.polaroid-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    padding: 50px;
+}
+
+.polaroid {
+    width: 200px;
+    background: white;
+    padding: 10px 10px 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.rotate1 { transform: rotate(-10deg); }
+.rotate2 { transform: rotate(8deg); }
+.rotate3 { transform: rotate(-5deg); }
+.rotate4 { transform: rotate(12deg); }
+
+/* Bouquet */
+.bouquet-bg {
+    background: url('https://images.unsplash.com/photo-1490750967868-88aa4486c946') no-repeat center/cover;
+    height: 100vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bouquet-messages {
+    background: rgba(0,0,0,0.6);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+/* Memories */
+.video-frame {
+    background-color: rgb(114, 255, 255);
+    margin-top: 100px;
+}
+.memories-bg{
+    background-color: rgb(114, 255, 255);
+}
+
+/* Letter */
+.letter {
+     background: linear-gradient(to right, #ffdde1, #ee9ca7);
+    text-align: left;
+    padding: 50px;
+}
+.letter h1{
+    color: #de475b;
+}
+.letter-bg{
+    background: linear-gradient(to right, #ffdde1, #ee9ca7);
+}
+
+
+
+
+/* -------------------- RESPONSIVE FIXES -------------------- */
+
+/* Make images scale without breaking layout */
+img, video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Main container scaling */
+.container, .gift-container, .bouquet-container, .letter {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+/* Cards grid auto-adjusts on small screens */
+.cards {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+}
+/* ------------------------- GIFT CARDS ------------------------- */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(2, 160px); /* 2 columns */
+    grid-template-rows: repeat(2, 160px);    /* 2 rows */
+    gap: 20px;
+    justify-content: center;   /* horizontal center */
+    align-content: center;     /* vertical compact */
+    margin-top: 30px;
+}
+
+/* Make cards responsive */
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: repeat(2, 120px);
+        grid-template-rows: repeat(2, 120px);
+        gap: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cards {
+        grid-template-columns: repeat(2, 100px);
+        grid-template-rows: repeat(2, 100px);
+        gap: 10px;
+    }
+    .card img {
+        width: 60%;
+    }
+}
+
+/* Polaroid gallery scaling */
+.polaroid-gallery {
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 20px;
+}
+
+.polaroid {
+    width: 90%;
+    max-width: 200px;
+}
+
+/* Bouquet points stay proportional */
+.text-point {
+    width: min(220px, 20vw);
+    font-size: clamp(10px, 1.2vw, 13px);
+    padding: 6px;
+}
+
+/* Hearts and floating elements scale */
+.heart, .heart-gift, .floating-balloons span, .popper {
+    font-size: clamp(20px, 5vw, 50px);
+}
+
+/* Fix button sizes on small screens */
+button {
+    padding: clamp(8px, 2vw, 12px) clamp(15px, 4vw, 25px);
+    font-size: clamp(14px, 3vw, 16px);
+}
+
+/* Adjust fixed positions on very small screens */
+@media (max-width: 768px) {
+    .say-yes { font-size: 35px; top: 50%; right: 5%; }
+    .cat { width: 35%; margin-top: 30px; }
+    .question { font-size: 20px; }
+    .gift-bg, .bouquet-bg, .letter-bg { padding: 20px; }
+}
+
+/* Mobile screens */
+@media (max-width: 480px) {
+    .say-yes { font-size: 28px; top: 45%; right: 5%; }
+    h1 { font-size: 28px; }
+    h2 { font-size: 22px; }
+    .cat { width: 50%; margin-top: 20px; }
+    .question { font-size: 18px; }
+    .cards { grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); gap: 10px; }
+    .text-point { font-size: 10px; width: 150px; }
+    .letter p { font-size: 16px; }
+}
